@@ -10,12 +10,13 @@ require_relative 'html_generator'
 if ARGV.empty?                      # there are no arugments provided
   puts "USAGE: bla bla bla"
 else
-  puts "ya, you passed in some arguments. :)"
+  # puts "ya, you passed in some arguments. :)"
   generator = HtmlGenerator.new
   if ARGV[0] == "index"
     generator.index  
   elsif ARGV[0] == "show"
-      generator.show
+      id = ARGV[1]
+      generator.show(id)
   else 
     puts "Unrecognized action. Please refer to USAGE."
   end
